@@ -4,13 +4,22 @@ function getComputerChoice() {
     return roshambo[Math.floor(Math.random() * roshambo.length)];
 }
 
-function mainGame() {
-    let playerPrompt = prompt("Pick! Rock, paper, or scissors?");
-    let playerSelection = playerPrompt.toLowerCase();
-    let computerSelection = getComputerChoice();
+function mainGame(playerSelection, computerSelection) {
 
     let announceRoundLose = `You Lose! ${computerSelection} beats ${playerSelection}!`;
     let announceRoundWin = `You Win! ${playerSelection} beats ${computerSelection}!`;
     let announceRoundTie = `It's a tie! Both players went for a ${computerSelection}!`
-
+    
+    if (playerSelection == computerSelection) {
+        return announceRoundTie;
+    }
+    else if (((computerSelection == "Rock") && (playerSelection != "paper")) || ((computerSelection == "Paper") && (playerSelection != "scissors")) || ((computerSelection == "Scissors") && (playerSelection != "rock"))) {
+        return announceRoundLose;
+    } else {
+        return announceRoundWin;
+    }
 }
+
+let playerPrompt = prompt("Pick! Rock, paper, or scissors?");
+let playerSelection = playerPrompt.toLowerCase();
+let computerSelection = getComputerChoice();
