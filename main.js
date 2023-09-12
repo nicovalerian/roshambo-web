@@ -3,3 +3,7 @@ function getComputerChoice() {
 
     return roshambo[Math.floor(Math.random() * roshambo.length)];
 }
+
+let playerPrompt = prompt("Pick! Rock, paper, or scissors?");
+
+
