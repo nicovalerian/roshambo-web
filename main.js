@@ -7,5 +7,5 @@ function getComputerChoice() {
 let playerPrompt = prompt("Pick! Rock, paper, or scissors?");
 let playerSelection = playerPrompt.toLowerCase();
 
-console.log(`${playerSelection}`);
+let computerSelection = getComputerChoice();
 
