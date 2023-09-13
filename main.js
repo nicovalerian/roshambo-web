@@ -8,7 +8,7 @@ function mainGame(playerSelection, computerSelection) {
 
     let announceRoundLose = `You Lose! ${computerSelection} beats ${playerSelection}!`;
     let announceRoundWin = `You Win! ${playerSelection} beats ${computerSelection}!`;
-    let announceRoundTie = `It's a tie! Both players went for a ${computerSelection}!`
+    let announceRoundTie = `It's a tie! Both players went for ${computerSelection}!`
     
     if (playerSelection === computerSelection.toLowerCase()) {
         return announceRoundTie;
@@ -31,7 +31,9 @@ function game() {
         let playerSelection = playerPrompt.toLowerCase();
         let computerSelection = getComputerChoice();
         roundsPlayed++;
-        mainGame(playerSelection, computerSelection);
+        let roundResult = mainGame(playerSelection, computerSelection);
+
+        console.log(roundResult);
     }
 }
 
