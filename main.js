@@ -25,5 +25,7 @@ function game() {
     let playerSelection = playerPrompt.toLowerCase();
     let computerSelection = getComputerChoice();
 
-    mainGame();
+    let playerScore = 0;
+    let computerScore = 0;
+
 }
