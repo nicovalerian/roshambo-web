@@ -35,6 +35,11 @@ function game() {
 
         console.log(roundResult);
     }
+
+    console.log(`Game ended.`)
+    if (playerScore === computerScore) {
+        console.log(`It's a tie! Both ended with a score of ${playerScore}`);
+    }
 }
 
 let playerScore = 0;
