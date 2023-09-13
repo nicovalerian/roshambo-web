@@ -8,7 +8,7 @@ function mainGame(playerSelection, computerSelection) {
 
     let announceRoundLose = `You Lose! ${computerSelection} beats ${playerSelection}!`;
     let announceRoundWin = `You Win! ${playerSelection} beats ${computerSelection}!`;
-    let announceRoundTie = `It's a tie! Both players went for ${computerSelection}!`
+    let announceRoundTie = `It's a tie! Both players went for ${computerSelection}!`;
     
     if (playerSelection === computerSelection.toLowerCase()) {
         return announceRoundTie;
@@ -16,10 +16,10 @@ function mainGame(playerSelection, computerSelection) {
     else if (((computerSelection === "Rock") && (playerSelection === "paper")) || 
     ((computerSelection === "Paper") && (playerSelection === "scissors")) || 
     ((computerSelection === "Scissors") && (playerSelection === "rock"))) {
-        playerScore++;
+        ++playerScore;
         return announceRoundWin;
     } else {
-        computerScore++;
+        ++computerScore;
         return announceRoundLose;
     }
 }
@@ -33,12 +33,12 @@ function game() {
         roundsPlayed++;
         let roundResult = mainGame(playerSelection, computerSelection);
 
-        console.log(roundResult);
+        console.log(roundResult + `\nYour score: ${playerScore}\nComputer's score: ${computerScore}`);
     }
 
     console.log(`Game ended.`)
     if (playerScore === computerScore) {
-        console.log(`It's a tie! Both ended with a score of ${playerScore}`);
+        console.log(`It's a tie! Both ended with a score of ${playerScore}.`);
     } else if (playerScore > computerScore) {
         console.log(`You win!\nYour score: ${playerScore}\nComputer's score: ${computerScore}`);
     } else {
