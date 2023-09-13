@@ -20,6 +20,10 @@ function mainGame(playerSelection, computerSelection) {
     }
 }
 
-let playerPrompt = prompt("Pick! Rock, paper, or scissors?");
-let playerSelection = playerPrompt.toLowerCase();
-let computerSelection = getComputerChoice();
+function game() {
+    let playerPrompt = prompt("Pick! Rock, paper, or scissors?");
+    let playerSelection = playerPrompt.toLowerCase();
+    let computerSelection = getComputerChoice();
+
+    mainGame();
+}
