@@ -21,11 +21,11 @@ function mainGame(playerSelection, computerSelection) {
 }
 
 function game() {
+    
     let playerPrompt = prompt("Pick! Rock, paper, or scissors?");
     let playerSelection = playerPrompt.toLowerCase();
     let computerSelection = getComputerChoice();
-
-    let playerScore = 0;
-    let computerScore = 0;
-
 }
+
+let playerScore = 0;
+let computerScore = 0;
