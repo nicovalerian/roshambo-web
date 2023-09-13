@@ -10,26 +10,28 @@ function mainGame(playerSelection, computerSelection) {
     let announceRoundWin = `You Win! ${playerSelection} beats ${computerSelection}!`;
     let announceRoundTie = `It's a tie! Both players went for a ${computerSelection}!`
     
-    if (playerSelection == computerSelection) {
+    if (playerSelection === computerSelection.toLowerCase()) {
         return announceRoundTie;
     }
-    else if (((computerSelection === "Rock") && (playerSelection === "Paper")) || ((computerSelection === "Paper") && (playerSelection === "Scissors")) || ((computerSelection === "Scissors") && (playerSelection === "rock"))) {
+    else if (((computerSelection === "Rock") && (playerSelection === "paper")) || 
+    ((computerSelection === "Paper") && (playerSelection === "scissors")) || 
+    ((computerSelection === "Scissors") && (playerSelection === "rock"))) {
+        playerScore++;
         return announceRoundWin;
     } else {
+        computerScore++;
         return announceRoundLose;
     }
 }
 
 function game() {
-    let playerPrompt = prompt("Pick! Rock, paper, or scissors?");
-    let playerSelection = playerPrompt.toLowerCase();
-    let computerSelection = getComputerChoice();
-    roundsPlayed++;
-
-    mainGame(playerSelection, computerSelection);
 
     while (roundsPlayed < 5) {
-        game();
+        let playerPrompt = prompt("Pick! Rock, paper, or scissors?");
+        let playerSelection = playerPrompt.toLowerCase();
+        let computerSelection = getComputerChoice();
+        roundsPlayed++;
+        mainGame(playerSelection, computerSelection);
     }
 }
 
