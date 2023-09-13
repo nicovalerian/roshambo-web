@@ -13,10 +13,10 @@ function mainGame(playerSelection, computerSelection) {
     if (playerSelection == computerSelection) {
         return announceRoundTie;
     }
-    else if (((computerSelection == "Rock") && (playerSelection != "paper")) || ((computerSelection == "Paper") && (playerSelection != "scissors")) || ((computerSelection == "Scissors") && (playerSelection != "rock"))) {
-        return announceRoundLose;
-    } else {
+    else if (((computerSelection === "Rock") && (playerSelection === "Paper")) || ((computerSelection === "Paper") && (playerSelection === "Scissors")) || ((computerSelection === "Scissors") && (playerSelection === "rock"))) {
         return announceRoundWin;
+    } else {
+        return announceRoundLose;
     }
 }
 
@@ -37,3 +37,4 @@ let playerScore = 0;
 let computerScore = 0;
 let roundsPlayed = 0;
 
+game();
